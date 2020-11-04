@@ -8,6 +8,7 @@ Create the following folder structure within the cloned repository folder if you
 ![Tree diagram of repository after the user has added the required folders and files](./imgs/tree.png)
 
 ## AWS credentials and IAM role configuration
+The `.aws` folder is ignored by git to prevent commiting secrets to the repository. 
 
 Set credentials as follows:
 ```
@@ -31,7 +32,8 @@ source_profile=base_profile_name
 
 ## Codebook folder
 Your notebooks and helper functions go in this folder. 
-This folder is ignored by git to decouple it from the docker code.
+This folder is ignored by git to decouple it from the docker code. This allows you to use a seperate repo in this location.
 
 ## docker-compose.yml configuration
-Change the volume tags to mount a different codebook folder and/or .aws folder.
+- Change the volume tags to mount a different codebook folder and/or .aws folder if you prefer .
+- Change the `AWS_PROFILE` variable to select `<your_profile_name>` from the credentials file.
