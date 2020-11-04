@@ -1,7 +1,7 @@
 version: "3.8"
 services:
-    wakanda:
-        container_name: glue_box
+    prod_box:
+        container_name: prod
         build: .
         ports: 
             - "8888:8888"
@@ -10,4 +10,15 @@ services:
             - ./codebook:/home/jupyter/jupyter_default_dir
             - ./.aws:/root/.aws
         environment:
-            - AWS_PROFILE=glue_box_prod
+            - AWS_PROFILE=base_profile_prod
+    stage_box:
+        container_name: stage
+        build: .
+        ports: 
+            - "8881:8888"
+            - "4041:4040"
+        volumes: 
+            - ./codebook:/home/jupyter/jupyter_default_dir
+            - ./.aws:/root/.aws
+        environment:
+            - AWS_PROFILE=base_profile_stage
