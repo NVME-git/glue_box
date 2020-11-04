@@ -1,3 +1,9 @@
+# AWS secrets should not be committed
+.aws/*
+
+# Codebook should be in a seperate repository
+codebook/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
