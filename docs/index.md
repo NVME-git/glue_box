@@ -1,5 +1,15 @@
 Adapted from the article ["Developing AWS Glue ETL jobs locally using a container"](https://aws.amazon.com/blogs/big-data/developing-aws-glue-etl-jobs-locally-using-a-container/)  by Vishal Pathak. 
 
+This project was created to help data engineers working with AWS Glue get up and running as fast as possible. All that is required is to have Docker installed on your machine.
+
+This project will also help developers save on the costs of running a development endpoint because most of their time is spent building and verifying ETL code transformations.
+
+This project can be configured for multiple environments (dev, prod) easily.
+
+An AWS account is not needed to use this repository. If you have sample data available, you can read it into a pandas dataframe then convert it to a spark dataframe and then Glue dynamic frame.
+
+If you would like to access AWS services, such as S3, you may use boto3 provided you have AWS CLI installed and configured correctly. The relevant documentation has been included below. Then you will only need to mount the `.aws` folder appropriately as shown below.
+
 ## AWS credentials and IAM role configuration
 
 Set credentials as follows:
