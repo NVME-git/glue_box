@@ -28,7 +28,7 @@ region=<your_AWS_REGION_here>
 output=json
 ```
 
-## docker-compose.yml configuration
+## Configure docker-compose.yml
 
 - Change the volume paths to mount local folders from other directories:
     - your/local/notebook/path/here:/home/jupyter/jupyter_default_dir
