@@ -38,3 +38,9 @@ output=json
 - Change the `AWS_PROFILE` variable to select `<your_profile_name>` from the credentials file.
 - You may use multiple glue boxes to run notebooks as different users with seperate access to data (eg stage and production).
 - Note that different glue boxes must be binded to different local ports.
+
+## Running
+
+Start: `docker-compose up -d`
+
+Stop: `docker-compose down`
