@@ -27,6 +27,9 @@ Append config as described by [AWS documentation](https://docs.aws.amazon.com/cl
 [profile <your_profile_name>]
 role_arn=<your_role_arn_here>
 source_profile=base_profile_name
+role_session_name=<your_role_session_name_here>
+region=<your_AWS_REGION_here>
+output=json
 ```
 
 ## Codebook folder
@@ -34,5 +37,10 @@ Your notebooks and helper functions go in this folder.
 This folder is ignored by git to decouple it from the docker code. This allows you to use a seperate repo in this location.
 
 ## docker-compose.yml configuration
-- Change the volume tags to mount a different codebook folder and/or .aws folder if you prefer .
+
+- Change the volume paths to mount local folders in other directories if you prefer:
+    - your/local/notebook/path/here:/home/jupyter/jupyter_default_dir
+    - ~/.aws:/root/.aws
 - Change the `AWS_PROFILE` variable to select `<your_profile_name>` from the credentials file.
+- You may use multiple glue boxes to run notebooks as different users with seperate access to data (eg stage and production).
+- Note that different glue boxes must be binded to different local ports.
