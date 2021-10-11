@@ -8,17 +8,6 @@ services:
             - "4040:4040"
         volumes: 
             - ./codebook:/home/jupyter/jupyter_default_dir
-            - ~/.aws:/root/.aws
+            - ./.aws:/root/.aws
         environment:
             - AWS_PROFILE=base_profile_prod
-    stage_box:
-        container_name: stage
-        build: .
-        ports: 
-            - "8881:8888"
-            - "4041:4040"
-        volumes: 
-            - ./codebook:/home/jupyter/jupyter_default_dir
-            - ~/.aws:/root/.aws
-        environment:
-            - AWS_PROFILE=base_profile_stage
